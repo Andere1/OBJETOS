@@ -29,6 +29,23 @@ function sumar(numInicial,numFinal)
 
 }
  //document.write(superCoder('Tamara',22,'Estudiante Laboratoria','Femenino'));
+
+ function parametro (array){
+   var texto = {
+     propiedad1: array[0],
+     propiedad2: array[1],
+     propiedad3: array[2],
+     propiedad4: array[3],
+     propiedad5: array[4],
+     propiedad6: array[5],
+     textoCont: function(){
+        return "Propiedad1-->"+this.propiedad1+' '+"propiedad2-->"+this.propiedad2+' '+"propiedad3-->"+this.propiedad3+' '+"propiedad4-->"+this.propiedad4+' '+"propiedad5-->"+this.propiedad5+' '+"propiedad6-->"+this.propiedad6;
+      }
+   };
+   return texto.textoCont();
+ }
+
+//function ficha
  function Clinica(nombre,apellido,edad,genero,ciudad,pais){
    this.nombre=nombre;
    this.apellido=apellido;
@@ -51,6 +68,12 @@ describe('Ejercicios',function(){
 describe('superCoder',function(){ //SE PUEDE UTILIZAR OTRO DESCRIBE E IT
 it('Prueba Tu eres o no una superCoder',function(){
   assert.equal ("YOU'RE AWESOME",superCoder('Tamara',22,'Estudiante Laboratoria','Femenino'));
+ });
+});
+describe('arrays', function(){
+        it('Prueba de arrays', function(){
+            assert.equal("Propiedad1-->6 propiedad2-->5 propiedad3-->4 propiedad4-->3 propiedad5-->2 propiedad6-->1",
+             parametro([6, 5, 4, 3, 2, 1]));
  });
 });
 describe("ClinicaLab",function(){
