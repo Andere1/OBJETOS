@@ -29,6 +29,17 @@ function sumar(numInicial,numFinal)
 
 }
  //document.write(superCoder('Tamara',22,'Estudiante Laboratoria','Femenino'));
+ function Clinica(nombre,apellido,edad,genero,ciudad,pais){
+   this.nombre=nombre;
+   this.apellido=apellido;
+   this.edad=edad;
+   this.genero=genero;
+   this.ciudad=ciudad;
+   this.pais=pais;
+   this.ficha=function(){
+   return "Nombre: " + this.nombre + " " + this.apellido + "  Edad: " + this.edad + "  Pais: " + this.pais;
+   }
+ }
 
 
 describe('Ejercicios',function(){
@@ -41,5 +52,11 @@ describe('superCoder',function(){ //SE PUEDE UTILIZAR OTRO DESCRIBE E IT
 it('Prueba Tu eres o no una superCoder',function(){
   assert.equal ("YOU'RE AWESOME",superCoder('Tamara',22,'Estudiante Laboratoria','Femenino'));
  });
+});
+describe("ClinicaLab",function(){
+  var casa = new Clinica("Rosa", "Zevallos", 19, "Femenino", "Sao Paulo", "Brasil");
+  it("Ficha clínica",function(){
+    assert.equal('Nombre: Rosa Zevallos  Edad: 19  Pais: Brasil',casa.ficha());
+  });
 });
 });
